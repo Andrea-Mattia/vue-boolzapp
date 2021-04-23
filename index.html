@@ -57,28 +57,10 @@
             <!-- sidevar contacts -->
             <div class="contacts">
                 <ul>
-                    <li>
+                    <li v-for="contact in contacts">
                         <div class="user df">
-                            <img src="./img/avatar_1.jpg" alt="Avatar_1">
-                            Michele
-                        </div>
-                    </li>
-                    <li>
-                        <div class="user df">
-                            <img src="./img/avatar_2.jpg" alt="Avatar_2">
-                            Fabio
-                        </div>
-                    </li>
-                    <li>
-                        <div class="user df">
-                            <img src="./img/avatar_3.jpg" alt="Avatar_3">
-                            Simone
-                        </div>
-                    </li>
-                    <li>
-                        <div class="user df">
-                            <img src="./img/avatar_4.jpg" alt="Avatar_4">
-                            Luisa
+                            <img :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + ' avatar'">
+                            {{ contact.name }}
                         </div>
                     </li>
                 </ul>
