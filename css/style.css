@@ -19,3 +19,142 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* UTILITIES */
+.df {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #bababa;
+}
+
+.user img {
+    width: 50px;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    width: 80%;
+    min-width: 900px;
+    height: 95%;
+    background: #fff;
+}
+
+/* ASIDE */
+.side {
+    flex-basis: 35%;
+    background: #fff;
+    overflow-y: auto;
+}
+
+/* side header */
+.side-header {
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    background: #ededed;
+}
+
+.side-header .user img {
+    width: 40px;
+}
+
+.side-header .icons ul li {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+/* side notify */
+.side-notify {
+    background: #a2dffe;
+    padding: 15px;
+}
+
+.notification {
+    align-items: center;
+}
+
+.notification .bell {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+}
+
+.notification .bell i {
+    font-size: 20px;
+    color: #a2dffe;
+}
+
+.notification .notify-text a {
+    color: #5e7f91;
+    text-decoration: underline;
+}
+
+/* side search */
+.side-search {
+    height: 50px;
+    padding: 10px;
+    background: #ededed;
+}
+
+.side-search a {
+    height: 30px;
+    padding: 5px 20px;
+    background: #fff;
+}
+
+.side-search input {
+    flex-grow: 1;
+    padding: 0 5px;
+    border: 1px solid #eee;
+}
+
+/* side contacts */
+.side .contacts li {
+    border-bottom: 1px solid #eee;
+}
+
+.side .contacts li:last-child {
+    border-bottom: 0;
+}
+
+.side .contacts li:hover {
+    background: #ededed;
+    cursor: pointer;
+}
+
+.side .user {
+    align-items: center;
+}
+
+/* MAIN CONTENT */
+.content {
+    flex-basis: 65%;
+    background-image: url('../img/mine.jpg');
+    flex-direction: column;
+}
+
+.content-header,
+.content-footer {
+    padding: 20px;
+    background: #ededed;
+}
+
+.content-main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
