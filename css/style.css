@@ -224,3 +224,29 @@ a {
     margin: 0 auto;
     padding: 50px 0;
 }
+
+/* CONTENT FOOTER */
+.content-footer {
+    height: 60px;
+    align-items: center;
+    background: #f3f0ec;
+}
+
+.content-footer i {
+    padding: 25px;
+    font-size: 25px;
+    color: #5e7f91;
+}
+
+.content-footer input {
+    flex-grow: 1;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.content-footer input::placeholder {
+    color: rgba(186, 186, 186, .7);
+}
