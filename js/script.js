@@ -131,7 +131,7 @@ const app = new Vue({
     computed: {
         filterContacts() {
             let tempContacts = this.contacts;
-            if (this.searchContact !== '' && this.searchContact) {
+            if (this.searchContact !== '') {
                 tempContacts = tempContacts.filter((contact) => {
                     return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
                 });
