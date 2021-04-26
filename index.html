@@ -57,9 +57,16 @@
             <!-- sidevar contacts -->
             <div class="contacts">
                 <ul>
-                    <li v-for="contact in contacts">
+                    <li 
+                    v-for="(contact, index) in contacts" 
+                    :key="index + '-' + contact.name"
+                    @click="showChat(index)"
+                    :class="{showed : index == indexChat}"
+                    >
                         <div class="user df">
-                            <img :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + ' avatar'">
+                            <img 
+                            :src="'./img/avatar' + contact.avatar + '.jpg'"
+                            :alt="contact.name + ' avatar'">
                             {{ contact.name }}
                         </div>
                     </li>
@@ -71,10 +78,11 @@
             <section class="content-header df">
                 <div class="header-left df">
                     <div class="user df">
-                        <img src="./img/avatar_1.jpg" alt="Michele avatar">
+                        <img :src="'./img/avatar' + contacts[indexChat].avatar + '.jpg'"
+                        :alt="contacts[indexChat].name + ' avatar'">
                     </div>
                     <div class="info">
-                        <div class="username">Michele</div>
+                        <div class="username">{{contacts[indexChat].name}}</div>
                         <div class="last-access">Ultimo accesso oggi alle 10.35</div>
                     </div>
                 </div>
@@ -90,13 +98,12 @@
                 <!-- Main Chat -->
                 <div class="main-chat">
                     <div class="chat-container df">
-                        <div class="message sent df">
-                            <div class="text">Messaggio inviato</div>
-                            <div class="info">10/01/2021 15:50:00</div>
-                        </div>
-                        <div class="message received df">
-                            <div class="text">Messaggio ricevuto</div>
-                            <div class="info">10/01/2021 15:50:00</div>
+                        <div 
+                        :class="'message df ' + message.status"
+                        v-for="message in contacts[indexChat].messages"
+                        >
+                            <div class="text">{{message.message}}</div>
+                            <div class="info">{{message.date}}</div>
                         </div>
                     </div>
                 </div>
