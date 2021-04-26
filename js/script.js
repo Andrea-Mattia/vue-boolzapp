@@ -125,10 +125,30 @@ const app = new Vue({
             },
         ],
         indexChat: 0,
+        newMessages: '',
     },
     methods: {
         showChat(index) {
             this.indexChat = index;
+        },
+        sendMessage(indexChat) {
+            if (this.newMessages !== '') {
+                this.contacts[indexChat].messages.push({
+                    message: this.newMessages,
+                    status: 'sent',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                });
+            }
+
+            this.newMessages = '';
+
+            setTimeout(() => {
+                this.contacts[indexChat].messages.push({
+                    message: 'ok',
+                    status: 'received',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+                });
+            }, 1000);
         },
     },
 });

@@ -211,6 +211,7 @@ a {
 
 .message .text {
     padding: 15px 15px 20px;
+    word-break: break-all;
 }
 
 .message .info {
