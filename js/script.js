@@ -126,6 +126,18 @@ const app = new Vue({
         ],
         indexChat: 0,
         newMessages: '',
+        searchContact: '',
+    },
+    computed: {
+        filterContacts() {
+            let tempContacts = this.contacts;
+            if (this.searchContact !== '' && this.searchContact) {
+                tempContacts = tempContacts.filter((contact) => {
+                    return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+                });
+            }
+            return tempContacts;
+        },
     },
     methods: {
         showChat(index) {

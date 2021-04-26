@@ -52,13 +52,14 @@
                 <a href="#">
                     <i class="fas fa-search"></i>
                 </a>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" placeholder="Cerca o inizia una nuova chat"
+                v-model="searchContact">
             </div>
             <!-- sidevar contacts -->
             <div class="contacts">
                 <ul>
                     <li 
-                    v-for="(contact, index) in contacts" 
+                    v-for="(contact, index) in filterContacts" 
                     :key="index + '-' + contact.name"
                     @click="showChat(index)"
                     :class="{showed : index == indexChat}"
