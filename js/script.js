@@ -150,17 +150,17 @@ const app = new Vue({
                     status: 'sent',
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 });
+    
+                this.newMessages = '';
+    
+                setTimeout(() => {
+                    this.contacts[indexChat].messages.push({
+                        message: 'ok',
+                        status: 'received',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+                    });
+                }, 1000);
             }
-
-            this.newMessages = '';
-
-            setTimeout(() => {
-                this.contacts[indexChat].messages.push({
-                    message: 'ok',
-                    status: 'received',
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss')
-                });
-            }, 1000);
         },
     },
 });
