@@ -40,6 +40,12 @@ a {
     border-radius: 50%;
 }
 
+.last-access {
+    font-size: 12px;
+    color: #5e7f91;
+    text-decoration: underline;
+}
+
 .showed {
     background: #e0e0e0;
 }
@@ -66,6 +72,10 @@ a {
     justify-content: space-between;
     align-items: center;
     background: #ededed;
+}
+
+.side-header .user {
+    align-items: center;
 }
 
 .side-header .user img {
@@ -128,6 +138,7 @@ a {
 
 /* side contacts */
 .side .contacts li {
+    align-items: center;
     border-bottom: 1px solid #eee;
 }
 
@@ -138,10 +149,6 @@ a {
 .side .contacts li:hover {
     background: #ededed;
     cursor: pointer;
-}
-
-.user {
-    align-items: center;
 }
 
 /* MAIN CONTENT */
@@ -164,12 +171,6 @@ a {
 
 .header-left {
     align-items: center;
-}
-
-.header-left .last-access {
-    font-size: 12px;
-    color: #5e7f91;
-    text-decoration: underline;
 }
 
 .header-right ul {

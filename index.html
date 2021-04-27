@@ -23,7 +23,7 @@
             <!-- sidebar header -->
             <div class="side-header df">
                 <div class="user df">
-                    <img src="./img/avatar_io.jpg" alt="Avatar_io">
+                    <img src="./img/avatar_io.png" alt="Avatar_io">
                     Nome Utente
                 </div>
                 <!-- sidebar icons -->
@@ -55,7 +55,7 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat"
                 v-model="searchContact">
             </div>
-            <!-- sidevar contacts -->
+            <!-- sidebar contacts -->
             <div class="contacts">
                 <ul>
                     <li 
@@ -63,12 +63,16 @@
                     :key="index + '-' + contact.name"
                     @click="showChat(index)"
                     :class="{showed : index == indexChat}"
+                    class="df"
                     >
                         <div class="user df">
                             <img 
                             :src="'./img/avatar' + contact.avatar + '.jpg'"
                             :alt="contact.name + ' avatar'">
-                            {{ contact.name }}
+                        </div>
+                        <div class="info">
+                            <div>{{ contact.name }}</div>
+                            <div class="last-access">{{contacts[index].messages[contacts[index].messages.length-1].date}}</div>
                         </div>
                     </li>
                 </ul>
@@ -78,13 +82,13 @@
         <main class="content df">
             <section class="content-header df">
                 <div class="header-left df">
-                    <div class="user df">
+                    <div class="user">
                         <img :src="'./img/avatar' + contacts[indexChat].avatar + '.jpg'"
                         :alt="contacts[indexChat].name + ' avatar'">
                     </div>
                     <div class="info">
                         <div class="username">{{contacts[indexChat].name}}</div>
-                        <div class="last-access">Ultimo accesso oggi alle 10.35</div>
+                        <div class="last-access">{{contacts[indexChat].messages[contacts[indexChat].messages.length-1].date}}</div>
                     </div>
                 </div>
                 <div class="header-right df">

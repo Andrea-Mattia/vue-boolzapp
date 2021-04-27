@@ -124,9 +124,29 @@ const app = new Vue({
                 ],
             },
         ],
+        response: [
+                'Tutto bene!',
+                'Tutto ok, grazie.',
+                'Mah, così e così',
+                'Va tutto a rotoli!!',
+                'Non ciò na lira fratellì',
+                'Se tira a campà'
+        ],
+        murphy: [
+            'Niente è facile come sembra',
+            'Tutto richiede più tempo di quanto si pensi',
+            'Se esiste una possibilità che varie cose vadano male, quella che può arrecare il danno maggiore sarà la prima a farlo',
+            'Se si prevedono quattro possibili modi in cui qualcosa può andare male, e si prevengono, immediatamente se ne rivelerà un quinto',
+            'Lasciate a se stesse, le cose tendono ad andare di male in peggio',
+            'Non ci si può mettere a far qualcosa senza che qualcos\'altro non vada fatto prima',
+            'Ogni soluzione genera nuovi problemi',
+            'I cretini sono sempre più ingegnosi delle precauzioni che si prendono per impedir loro di nuocere',
+            'Per quanto nascosta sia una pecca, la natura riuscirà sempre a scovarla',
+        ],
         indexChat: 0,
         newMessages: '',
         searchContact: '',
+        randomIndex: 0,
     },
     computed: {
         filterContacts() {
@@ -151,14 +171,42 @@ const app = new Vue({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 });
     
-                this.newMessages = '';
     
                 setTimeout(() => {
-                    this.contacts[indexChat].messages.push({
-                        message: 'ok',
-                        status: 'received',
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss')
-                    });
+
+                    function getRandomNumber(min, max) {
+                        return Math.floor( Math.random() * (max - min + 1) ) + min;
+                    }
+
+                    let lastResponse = this.response.length - 1;
+                    this.randomIndex = getRandomNumber(0, lastResponse);
+
+                    switch (this.newMessages) {
+                        case 'come va?':
+                        case 'tutto ok?':
+                        case 'come andiamo?':
+                        case 'come stai?':
+                        case 'stai bene?':
+                            this.contacts[indexChat].messages.push({
+                                message: this.response[this.randomIndex],
+                                status: 'received',
+                                date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+                            });
+                            break;
+                        default:
+
+                            let lastMurphy = this.murphy.length - 1;
+                            this.randomIndex = getRandomNumber(0, lastMurphy);
+
+                            this.contacts[indexChat].messages.push({
+                                message: this.murphy[this.randomIndex],
+                                status: 'received',
+                                date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+                            });
+                    }
+
+                    this.newMessages = '';
+
                 }, 1000);
             }
         },
