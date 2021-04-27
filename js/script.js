@@ -123,6 +123,131 @@ const app = new Vue({
                     }
                 ],
             },
+            {
+                name: 'Giangiacomo',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '12/03/2021 15:30:55',
+                        message: 'Lo sai che le mucche fano moo, ma una fa moo moo?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '12/03/2021 15:50:10',
+                        message: 'Si, ma preferirei che non mi scrivessi cavolate',
+                        status: 'received'
+                    },
+                    {
+                        date: '12/03/2021 15:53:28',
+                        message: 'E allora dove sarebbe il divertimento?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '12/03/2021 15:55:20',
+                        message: 'Non lo so, prova a chiedermi qualcos\'altro!',
+                        status: 'received'
+                    },
+                ],
+            },
+            {
+                name: 'Eustachio',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 12:32:25',
+                        message: 'Allora? tutto pronto per stasera?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 12:38:00',
+                        message: 'Assolutamente! Ho anche comrato una macchina per i popcorn!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Foffo',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 16:30:55',
+                        message: 'Ho un pochetto d\'ansia per domani. Secondo te come devo comportarmi?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:31:20',
+                        message: 'Dovrei mettermi un bel completo?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:32:12',
+                        message: 'Oppure vestirmi casual?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:33:00',
+                        message: 'Le prendo dei fiori? O sono troppo scontati?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:35:24',
+                        message: 'Zi, te stai ad accollà troppo. Stai tranquillo, ciò parlato io. Andrà tutto bene',
+                        status: 'sent'
+                    },
+                ],
+            },
+            {
+                name: 'Carcarlo',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 16:43:55',
+                        message: 'Ma è vero che domani sera Foffo esce con Elisa?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:45:00',
+                        message: 'Si, me sta a riempì de domande. Non lo reggo più',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:45:55',
+                        message: 'Vabbè dai, capiscilo. Sono anni che non esce con una donna!',
+                        status: 'received'
+                    },
+                ],
+            },
+            {
+                name: 'Luisa',
+                avatar: '_9',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 14:32:40',
+                        message: 'Allora? Che sensazioni hai per domani sera?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 14:32:55',
+                        message: 'Stai bella carica?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 14:35:00',
+                        message: 'Lasciami perdere guarda, ho accettato solo perchè così almeno la smetteva di chiamarmi ogni volta',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 14:35:58',
+                        message: 'Ora vado. Anche se è un rompiscatole almeno mi voglio dare una sistematina',
+                        status: 'received'
+                    },
+                ],
+            },
         ],
         response: [
                 'Tutto bene!',
