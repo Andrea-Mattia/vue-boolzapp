@@ -222,7 +222,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Elisa',
                 avatar: '_9',
                 visible: true,
                 messages: [
