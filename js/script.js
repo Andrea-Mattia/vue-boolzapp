@@ -273,17 +273,6 @@ const app = new Vue({
         searchContact: '',
         randomIndex: 0,
     },
-    computed: {
-        filterContacts() {
-            let tempContacts = this.contacts;
-            if (this.searchContact !== '') {
-                tempContacts = tempContacts.filter((contact) => {
-                    return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
-                });
-            }
-            return tempContacts;
-        },
-    },
     methods: {
         showChat(index) {
             this.indexChat = index;
@@ -334,6 +323,15 @@ const app = new Vue({
 
                 }, 1000);
             }
+        },
+        filterContacts() {
+            this.contacts.forEach((contact) => {
+                if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
         },
     },
 });
